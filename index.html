@@ -11,7 +11,6 @@
     
     
     
-    <!---->
 
     
     
@@ -19,7 +18,8 @@
     
     
     
-<style>.card,.card-small{background-color:#58b19f;border-radius:.75rem}.card .card-body p,body{margin:0}.hidden{display:none}.visible{display:block}.field-size,input,textarea{font-size:2em}.size-header,label{font-size:1.5em}input,select,textarea{width:100%}.centered{text-align:center}.icon-eye{margin-left:-30px;cursor:pointer}body{padding:0;background-color:#000;color:#fafbff;font-family:Avenir Next,Avenir,SegoeUI,sans-serif;min-height:50vh;display:flex;align-items:center}.container{padding-left:2rem;padding-right:2rem}.card-section{display:grid;gap:1.75rem;grid-template-columns:repeat(auto-fill,minmax(288px,1fr))}.card{padding:1.75rem;display:flex;flex-wrap:wrap}.card-section-small{display:grid;gap:1.75rem;grid-template-columns:repeat(auto-fill,minmax(60px,1fr))}.card-small{padding:.5rem;display:flex;flex-wrap:wrap}.card .card-header{flex-basis:100%;font-size:1.5rem;text-transform:uppercase}.card .card-body{flex-basis:100%;margin-top:1.2rem}.icon-big{font-size:14em}.icon-medium{font-size:3em;padding:.2em}.card .card-body a{text-decoration:none;color:#fafbff;display:inline-block;padding:.7rem 1.75rem;border:1px solid transparent;background-color:w171f;border-radius:1.75rem;margin-top:1.2ren}.card .card-body a:hover{background-color:transparent;border-color:#0e171f;color:e171f}.card .card.footer{flex-basis:100%;align-self:flex-end;text-align:end;font-size:0.Brem}label{padding-bottom:1em;letter-spacing:.05em}.field{display:flex;flex-flow:column-reverse;margin-bottom:1em}input,label{transition:.2s;touch-action:manipulation}input{font-size:1.em;border:0;border-bottom:1px solid #ccc;font-family:inherit;-webkit-appearance:none;border-radius:0;padding:0;cursor:text}input:focus{outline:0;border-bottom:1px solid #666}input:placeholder-shown+label,textarea{cursor:text;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transform-origin:left bottom;transform:translate(0,2.125rem) scale(1.05)}::-webkit-input-placeholder{opacity:0;transition:inherit}input:focus::-webkit-input-placeholder{opacity:1}input:focus+label,input:not(:placeholder-shown)+label{transform:translate(0,0) scale(1);cursor:pointer}</style>
+    
+<style>.card,.card-small{background-color:#58b19f;border-radius:.75rem}.card .card-body p,body{margin:0}.hidden{display:none}.visible{display:block}.field-size{font-size:2em}.size-header,label{font-size:1.5em}.centered{text-align:center}.icon-eye{margin-left:-30px;cursor:pointer}body{padding:0;background-color:#000;color:#fafbff;font-family:Avenir Next,Avenir,SegoeUI,sans-serif;min-height:50vh;display:flex;align-items:center}.container-cards{padding-left:2rem;padding-right:2rem}.card-section{display:grid;gap:1.75rem;grid-template-columns:repeat(auto-fill,minmax(288px,1fr))}.card{padding:1.75rem;display:flex;flex-wrap:wrap}.card-section-small{display:grid;gap:1.75rem;grid-template-columns:repeat(auto-fill,minmax(60px,1fr))}.card-small{padding:.5rem;display:flex;flex-wrap:wrap}.card .card-header{flex-basis:100%;font-size:1.5rem;text-transform:uppercase}.card .card-body{flex-basis:100%;margin-top:1.2rem}.icon-big{font-size:14em}.icon-medium{font-size:3em;padding:.2em}.card .card-body a{text-decoration:none;color:#fafbff;display:inline-block;padding:.7rem 1.75rem;border:1px solid transparent;background-color:w171f;border-radius:1.75rem;margin-top:1.2ren}.card .card-body a:hover{background-color:transparent;border-color:#0e171f;color:e171f}.card .card.footer{flex-basis:100%;align-self:flex-end;text-align:end;font-size:0.Brem}label{padding-bottom:1em}input,textarea{font-size:2em;width:100%}</style>
 <script id='nomin'>//JS START ./main.js
 function doAction(id) {
     alert(id);
@@ -28,9 +28,8 @@ function doAction(id) {
 function showMainText()
 {
     hideControl("mainMenu");
-    showControl("enterText")
-    // updateClass("mainMenu","visible","hidden");
-    // updateClass("enterText","hidden","visible");
+    showControl("enterText");
+    infoMessage("Enter text to Encrypt");
 }
 
 function goMainText(id)
@@ -83,6 +82,12 @@ function doEncrypt2()
 
 function doDecrypt2(){
     
+}
+
+function showSystemInfo(id)
+{
+    hideControl(id);
+    showControl("divSysInfo");
 }
 
 
@@ -2128,7 +2133,7 @@ var isAudio = false;
 var isImage = false;
 var isVideo = false;
 var isPDF = false;
-var isDOcument = false;
+var isDocument = false;
 var freeVersion = false;
 var messages = [];
 //JS END ../common6/globals.js
@@ -2136,9 +2141,9 @@ var messages = [];
 //JS START ../common6/parameters.js
 var paymentsUrl = "https://script.google.com/macros/s/AKfycbxZbg4szP1gHz7nNcw6GXH5rN5CEEggx96TmGc1FOT_2EJCbmjOUuh4ar6V_gd7gdk2WQ/exec";
                    
-var versionNumber = "5.29"; 
+var versionNumber = "6.2.001-20221030--6201"; 
 var softwareID = "SafeWords";
-var environment = "Test";
+var environment = "Dev";
 var clientId = "AVWcfGdcCdpt2YUV1PHIGxaSDxbPW6Kd5LV3VObh_Rl1c-0VlTR0ZscKZoaeDt2k8jebrs0hBpw4IjK2";
 var registerUrl = "https://script.google.com/macros/s/AKfycbxvK6g57HTBPiWpPKwmRKsTS3y0vjLUK93c8YMlw1lsZkwkWhDCzuhaiqmMIwveAUgf/exec";
 //var landingLink = "https://sites.google.com/view/kryptify/home";
@@ -2162,6 +2167,55 @@ var portrait = true;
 
 //JS END ../common6/parameters.js
 
+//JS START ../common6/swipe.js
+//https://gist.github.com/SleepWalker/da5636b1abcbaff48c4d
+
+var touchstartX = 0;
+var touchstartY = 0;
+var touchendX = 0;
+var touchendY = 0;
+
+function initializeSwipe(ctlName) {
+    const gestureZone = document.getElementById(ctlName);
+
+    if ( gestureZone==null)
+        return;
+
+    gestureZone.addEventListener('touchstart', function (event) {
+        touchstartX = event.changedTouches[0].screenX;
+        touchstartY = event.changedTouches[0].screenY;
+    }, false);
+
+    gestureZone.addEventListener('touchend', function (event) {
+        touchendX = event.changedTouches[0].screenX;
+        touchendY = event.changedTouches[0].screenY;
+        handleGesture();
+    }, false);
+}
+
+function handleGesture() {
+    if (touchendX < touchstartX) {
+        console.log('Swiped left');
+    }
+
+    if (touchendX > touchstartX) {
+        console.log('Swiped right');
+    }
+
+    if (touchendY < touchstartY) {
+        console.log('Swiped up');
+    }
+
+    if (touchendY > touchstartY) {
+        console.log('Swiped down');
+    }
+
+    if (touchendY === touchstartY) {
+        console.log('Tap');
+    }
+}
+//JS END ../common6/swipe.js
+
 
 </script>
 </head>
@@ -2172,30 +2226,30 @@ var portrait = true;
         <!--
         <button type="button" class="close">&times; Close All</button>
         -->
-      </div>
-    
-    <div class="container">
+    </div>
+
+    <div class="container-cards">
         <div id="mainMenu" class="visible">
             <section class="card-section">
                 <div id="cardMainText" class="card" onclick="showMainText()">
-                    <i class="far fa-edit icon-big" title="System Info" id="clearText" style="cursor: pointer;"></i>
-                    <div class="card-body">
-                        <p>Enter text manually</p>
+                    <i class="far fa-edit icon-big" title="System Info" id="clearText"style="cursor: pointer;"></i>
+                    <div class="card-body field-size">
+                        <p>Type text</p>
                     </div>
                 </div>
 
                 <div class="card">
                     <i id="doPaste" class="fas fa-paste icon-big" title="System Info" id="clearText"
                         style="cursor: pointer;" onclick="U2pasteClipboard()"></i>
-                    <div class="card-body">
-                        <p>Paste Text from Clipboard</p>
+                    <div class="card-body field-size">
+                        <p>Paste Clipboard</p>
                     </div>
                 </div>
 
                 <div class="card">
                     <i class="fas fa-folder-open icon-big" title="System Info" id="clearText" style="cursor: pointer;"
                         onclick="toggleSysInfo()"></i>
-                    <div class="card-body">
+                    <div class="card-body field-size">
                         <p>Select a file</p>
                     </div>
                 </div>
@@ -2203,15 +2257,15 @@ var portrait = true;
                 <div class="card">
                     <i class="fas fa-glasses icon-big" title="System Info" id="clearText" style="cursor: pointer;"
                         onclick="toggleSysInfo()"></i>
-                    <div class="card-body">
+                    <div class="card-body field-size">
                         <p>Terms of Service </p>
                     </div>
                 </div>
 
                 <div class="card">
-                    <i class="far fa-eye-slash  icon-big" title="Hide Media" id="viewMedia" style="cursor: pointer;"
-                    onclick="toggleMedia()"></i>
-                        <div class="card-body">
+                    <i class="fas fa-user-secret icon-big" title="Hide Media" id="viewMedia" style="cursor: pointer;"
+                        onclick="toggleMedia()"></i>
+                    <div class="card-body field-size">
                         <p>Privacy Policy </p>
                     </div>
                 </div>
@@ -2220,35 +2274,35 @@ var portrait = true;
                 <div class="card">
                     <i class="fas fa-cog icon-big" title="System Info" id="settings" style="cursor: pointer;"
                         onclick="toggleSettings()"></i>
-                        <div class="card-body">
+                    <div class="card-body field-size">
                         <p>Settings </p>
                     </div>
                 </div>
                 <div class="card">
                     <i class="fas fa-info-circle icon-big" title="System Info" id="clearText" style="cursor: pointer;"
-                    onclick="toggleSysInfo()"></i>
-                    <div class="card-body">
+                        onclick="showSystemInfo('mainMenu')"></i>
+                    <div class="card-body field-size">
                         <p>System Information</p>
                     </div>
                 </div>
                 <div class="card">
                     <i class="far fa-question-circle icon-big" title="Copy" id="copy" style="cursor: pointer;"
-                    onclick="doCopy()"></i>
-                    <div class="card-body">
-                        <p>Help & Documentation</p>
+                        onclick="doCopy()"></i>
+                    <div class="card-body field-size">
+                        <p>Documentation</p>
                     </div>
                 </div>
 
-                
-                <div class="card" >
+
+                <div class="card">
                     <i class="fas fa-cog icon-medium" title="System Info" id="settings" style="cursor: pointer;"
                         onclick="toggleSettings()"></i>
-                        <i class="fas fa-info-circle icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
-                        onclick="toggleSysInfo()"></i>
-                        <i class="far fa-question-circle icon-medium" title="Copy" id="copy" style="cursor: pointer;"
+                    <i class="fas fa-info-circle icon-medium" title="System Info" id="clearText"
+                        style="cursor: pointer;" onclick="toggleSysInfo()"></i>
+                    <i class="far fa-question-circle icon-medium" title="Copy" id="copy" style="cursor: pointer;"
                         onclick="doCopy()"></i>
 
-        
+
                     <i class="fas fa-user-secret icon-medium" title="Encrypt" id="clearText" style="cursor: pointer;"
                         onclick="doEncryptNew()"></i>
                     <i class="fa fa-unlock icon-medium" title="Decrypt" id="clearText" style="cursor: pointer;"
@@ -2279,110 +2333,122 @@ var portrait = true;
                     <i class="fas fa-home icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
                         onclick="toggleSysInfo()"></i>
                 </div>
-                
+
 
             </section>
         </div>
     </div>
 
-    <!--01 ENTER TEXT ****************************************************************************-->
-    <div id="enterText" class="hidden">
-        <div class="field">
-            <label for="mainText">Enter Text</label></br>
-            <textarea name="mainText" id="mainText" placeholder="Enter the text you want to Encrypt"
-                rows="10"></textarea>
-        </div>
-        <i class="fas fa-home icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
-            onclick="goHome('enterText')"></i>
-        <i id="doPaste" class="fas fa-paste icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
-            onclick="U2pasteClipboard()"></i>
+    <div id="pages">
+        <!--01 ENTER TEXT ****************************************************************************-->
+        <div id="enterText" class="hidden">
+            <div class="field">
+                <label for="mainText">Enter Text</label></br>
+                <textarea name="mainText" id="mainText" placeholder="Enter the text you want to Encrypt"
+                    rows="10"></textarea>
+            </div>
+            <i class="fas fa-home icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
+                onclick="goHome('enterText')"></i>
+            <i id="doPaste" class="fas fa-paste icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
+                onclick="U2pasteClipboard()"></i>
 
-        <i class="fa fa-eraser icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
-            onclick="clearFieldsString('mainText')"></i>
-        <i class="far fa-arrow-alt-circle-right  icon-medium" title="Next" id="iconNext" style="cursor: pointer;"
-            onclick="goPasswords('enterText')"></i>
+            <i class="fa fa-eraser icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
+                onclick="clearFieldsString('mainText')"></i>
 
-    </div>
+                <i id="doPaste" class="fas fa-paste icon-medium" title="System Info" id="clearText"
+                style="cursor: pointer;" onclick="U2pasteClipboard()"></i>
 
-    <!--01 ENTER PASSWORD ****************************************************************************-->
-    <div id="enterPasswords" class="hidden">
-        <div class="field">
-            <label for="password">Password</label></br>
-            <input type="password" name="password" id="password" placeholder="Enter Password">
+            <i class="far fa-arrow-alt-circle-right  icon-medium" title="Next" id="iconNext" style="cursor: pointer;"
+                onclick="goPasswords('enterText')"></i>
+
         </div>
 
-        <div class="field">
-            <label for="passwordHint">Password Hint</label></br>
-            <textarea name="passwordHint" id="passwordHint" class="field-size" placeholder="Enter password hint"
-                rows="4"></textarea>
+        <!--01 ENTER PASSWORD ****************************************************************************-->
+        <div id="enterPasswords" class="hidden">
+            <div class="field">
+                <label for="password">Password</label></br>
+                <input type="password" name="password" id="password" placeholder="Enter Password">
+            </div>
+
+            <div class="field">
+                <label for="passwordHint">Password Hint</label></br>
+                <textarea name="passwordHint" id="passwordHint" class="field-size" placeholder="Enter password hint"
+                    rows="4"></textarea>
+            </div>
+
+            <i class="fas fa-home icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
+                onclick="goHome('enterPasswords')"></i>
+            <i class="fa fa-eraser icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
+                onclick="clearFieldsString('password,passwordHint')"></i>
+
+                <i id="doPaste" class="fas fa-paste icon-medium" title="System Info" id="clearText"
+                style="cursor: pointer;" onclick="U2pasteClipboard()"></i>
+
+            <i class="fa fa-eye  icon-medium" title="Next" id="togglePassword"></i>
+            <i class="fa fa-cog  icon-medium" title="Next" id="iconNext" style="cursor: pointer;"
+                onclick="goAdvanced('enterPasswords')"></i>
+
+            <i class="far fa-arrow-alt-circle-left  icon-medium" title="Next" id="iconNext" style="cursor: pointer;"
+                onclick="goMainText('enterPasswords')"></i>
+            <i class="far fa-arrow-alt-circle-right  icon-medium" title="Next" id="iconNext" style="cursor: pointer;"
+                onclick="goFinalPage('enterPasswords')"></i>
+            <i class="far fa-question-circle icon-medium" title="Copy" id="copy" style="cursor: pointer;"
+                onclick="doCopy()"></i>
+
+
+
         </div>
 
-        <i class="fas fa-home icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
-            onclick="goHome('enterPasswords')"></i>
-        <i class="fa fa-eraser icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
-            onclick="clearFieldsString('password,passwordHint')"></i>
-        <i class="fa fa-eye  icon-medium" title="Next" id="togglePassword"></i>
-        <i class="fa fa-cog  icon-medium" title="Next" id="iconNext" style="cursor: pointer;"
-            onclick="goAdvanced('enterPasswords')"></i>
 
-        <i class="far fa-arrow-alt-circle-left  icon-medium" title="Next" id="iconNext" style="cursor: pointer;"
-            onclick="goMainText('enterPasswords')"></i>
-        <i class="far fa-arrow-alt-circle-right  icon-medium" title="Next" id="iconNext" style="cursor: pointer;"
-            onclick="goFinalPage('enterPasswords')"></i>
-        <i class="far fa-question-circle icon-medium" title="Copy" id="copy" style="cursor: pointer;"
-            onclick="doCopy()"></i>
+        <!--02 ADVANCED PASSWORDS ****************************************************************************-->
+        <div id="advanced" class="hidden">
+            <div class="field">
+                <label for="passwordWords">Password Words Source</label></br>
+                <textarea name="passwordWords" id="passwordWords" class="field-size" placeholder="Enter words source"
+                    rows="5"></textarea>
+            </div>
+            <div class="field">
+                <label for="pattern">Length Pattern</label></br>
+                <input type="number" name="pattern" id="pattern" placeholder="Enter Lengths Pattern">
+            </div>
 
-
-
-    </div>
-
-
-    <!--02 ADVANCED PASSWORDS ****************************************************************************-->
-    <div id="advanced" class="hidden">
-        <div class="field">
-            <label for="passwordWords">Password Words Source</label></br>
-            <textarea name="passwordWords" id="passwordWords" class="field-size" placeholder="Enter words source"
-                rows="5"></textarea>
-        </div>
-        <div class="field">
-            <label for="pattern">Length Pattern</label></br>
-            <input type="number" name="pattern" id="pattern" placeholder="Enter Lengths Pattern">
-        </div>
-
-        <i class="fa fa-eraser icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
-            onclick="clearFieldsString('passwordWords,pattern')"></i>
-        <i class="fas fa-folder-open icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
-            onclick="openFile('text,pdf')"></i>
+            <i class="fa fa-eraser icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
+                onclick="clearFieldsString('passwordWords,pattern')"></i>
+            <i class="fas fa-folder-open icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
+                onclick="openFile('text,pdf')"></i>
 
 
-        <i class="fa fa-random  icon-medium" title="Next" id="iconNext" style="cursor: pointer;"
-            onclick="goPasswords('advanced')"></i>
+            <i class="fa fa-random  icon-medium" title="Next" id="iconNext" style="cursor: pointer;"
+                onclick="goPasswords('advanced')"></i>
+                <i id="doPaste" class="fas fa-paste icon-medium" title="System Info" id="clearText"
+                style="cursor: pointer;" onclick="U2pasteClipboard()"></i>
 
-        <i class="far fa-arrow-alt-circle-left  icon-medium" title="Next" id="iconNext" style="cursor: pointer;"
-            onclick="goPasswords('advanced')"></i>
+
+            <i class="far fa-arrow-alt-circle-left  icon-medium" title="Next" id="iconNext" style="cursor: pointer;"
+                onclick="goPasswords('advanced')"></i>
 
             <!--
         <i class="far fa-arrow-alt-circle-right  icon-medium" title="Next" id="iconNext" style="cursor: pointer;"
             onclick="goFinalPage('advanced')"></i>
             -->
 
-        <i class="far fa-question-circle icon-medium" title="Copy" id="copy" style="cursor: pointer;"
-            onclick="doCopy()"></i>
+            <i class="far fa-question-circle icon-medium" title="Copy" id="copy" style="cursor: pointer;"
+                onclick="doCopy()"></i>
 
 
-    </div>
-
-
-
-    <!--03 FINAL PAGE ****************************************************************************-->
-    <div id="finalPage" class="hidden">
-        <div class="field">
-            <label for="expiration">Expiration</label></br>
-            <input type="number" name="expiration" id="expiration" placeholder="Expiration">
         </div>
 
-        <label for="expirationUnit">Expiration Units</label></br>
-        <!--
+
+
+        <!--03 FINAL PAGE ****************************************************************************-->
+        <div id="finalPage" class="hidden">
+            <div class="field">
+                <label for="expiration">Expiration</label></br>
+                <input type="number" name="expiration" id="expiration" placeholder="Expiration">
+            </div>
+
+            <label for="expirationUnit">Expiration Units</label></br>
+            <!--
         <div class="field">
             <select name="expirationUnit" id="expirationUnit">
                 <option value="Days">Days</option>
@@ -2394,80 +2460,202 @@ var portrait = true;
 
         -->
 
-        <fieldset">
-        <!--
+            <fieldset">
+                <!--
             <legend>Expiration:</legend>
             -->
 
-            <div>
-                <label for="rbNone">None</label>
-                <input type="radio" id="rbNone" name="rbNone" value="None" checked>
+                <div>
+                    <label for="rbNone">None</label>
+                    <input type="radio" id="rbNone" name="rbExpiration" value="None" checked>
+                </div>
+
+                <div>
+                    <label for="rbDays">Days</label>
+                    <input type="radio" id="rbDays" name="rbExpiration" value="Days">
+                </div>
+
+                <div>
+                    <label for="rbHours">Hours</label>
+                    <input type="radio" id="rbHours" name="rbExpiration" value="Hours">
+                </div>
+
+                <div>
+                    <label for="rbMinutes">Minutes</label>
+                    <input type="radio" id="rbMinutes" name="rbExpiration" value="Minutes">
+                </div>
+                </fieldset>
+                <i class="fas fa-home icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
+                    onclick="goHome('finalPage')"></i>
+                <i class="fa fa-eraser icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
+                    onclick="clearFinalForm()"></i>
+
+                <i class="fas fa-user-secret icon-medium" title="Encrypt" id="clearText" style="cursor: pointer;"
+                    onclick="doEncrypt2()"></i>
+                <i class="fa fa-unlock icon-medium" title="Decrypt" id="clearText" style="cursor: pointer;"
+                    onclick="doDecrypt2()"></i>
+                <i class="far fa-arrow-alt-circle-left  icon-medium" title="Next" id="iconNext" style="cursor: pointer;"
+                    onclick="goPasswords('finalPage')"></i>
+
+                <i class="far fa-arrow-alt-circle-right  icon-medium" title="Next" id="iconNext"
+                    style="cursor: pointer;" onclick="goSavePage('finalPage')"></i>
+
+                <i class="far fa-question-circle icon-medium" title="Copy" id="copy" style="cursor: pointer;"
+                    onclick="doCopy()"></i>
+
+
+
+        </div>
+
+        <!--04 save ****************************************************************************-->
+        <div id="savePage" class="hidden">
+            <div class="field">
+                <label for="outFileName">Save As</label></br>
+                <input type="number" name="outFileName" id="outFileName" placeholder="Enter File Name">
             </div>
 
-            <div>
-                <label for="rbDays">Days</label>
-                <input type="radio" id="rbDays" name="rbDays" value="Days">
-            </div>
-
-            <div>
-                <label for="rbHours">Hours</label>
-                <input type="radio" id="rbHours" name="rbHours" value="Hours">
-            </div>
-
-            <div>
-                <label for="rbMinutes">Minutes</label>
-                <input type="radio" id="rbMinutes" name="rbMinutes" value="Minutes">
-            </div>
-            </fieldset>
             <i class="fas fa-home icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
-                onclick="goHome('finalPage')"></i>
-            <i class="fa fa-eraser icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
-                onclick="clearFinalForm()"></i>
+                onclick="goHome('savePage')"></i>
+            <i class="fa fa-save icon-medium" title="Download" id="iconDownload" style="cursor: pointer;"
+                onclick="confirmDownload()"></i>
+            <i class="fa fa-share icon-medium" title="Download" id="iconDownload" style="cursor: pointer;"
+                onclick="confirmDownload()"></i>
 
-            <i class="fas fa-user-secret icon-medium" title="Encrypt" id="clearText" style="cursor: pointer;"
-                onclick="doEncrypt2()"></i>
-            <i class="fa fa-unlock icon-medium" title="Decrypt" id="clearText" style="cursor: pointer;"
-                onclick="doDecrypt2()"></i>
-            <i class="far fa-arrow-alt-circle-left  icon-medium" title="Next" id="iconNext" style="cursor: pointer;"
-                onclick="goPasswords('finalPage')"></i>
-
-            <i class="far fa-arrow-alt-circle-right  icon-medium" title="Next" id="iconNext" style="cursor: pointer;"
-                onclick="goSavePage('finalPage')"></i>
-
+            <i class="fas fa-envelope icon-medium" title="Download" id="iconDownload" style="cursor: pointer;"></i>
+            <i class="fab fa-whatsapp icon-medium" title="Download" id="iconDownload" style="cursor: pointer;"></i>
+            <i class="fab fa-facebook-messenger icon-medium" title="Download" id="iconDownload"
+                style="cursor: pointer;"></i>
+            <i class="fab fa-google-drive icon-medium" title="Download" id="iconDownload" style="cursor: pointer;"></i>
+            <i class="fas fa-upload icon-medium" title="Download" id="iconDownload" style="cursor: pointer;"></i>
             <i class="far fa-question-circle icon-medium" title="Copy" id="copy" style="cursor: pointer;"
                 onclick="doCopy()"></i>
 
 
+                <div id="divSysInfo" class="hidden" >
+                    <table class="table table-stripped">
+                        <tr>
+                            <td>
+                                <label><i>User:</i></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="txUserId" type="text" class="form-control text-responsive" name="txUserId" disabled></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label><i>IP</i></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="txIP" type="text" class="form-control text-responsive" name="txIP" disabled></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label><i>File API Supported:</i></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="txFileAPISupported" type="text" class="form-control text-responsive"
+                                    name="txFileAPISupported" disabled></input>
+                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label><i>Clipboard API Supported:</i></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="txCanCopy" type="text" class="form-control text-responsive" name="txCanCopy"
+                                    disabled></input>
+                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label><i>Protocol:</i></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="txProtocol" type="text" class="form-control text-responsive" name="txProtocol"
+                                    disabled></input>
+                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label><i>Window Dimensions:</i></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="txWidth" type="text" class="form-control text-responsive" name="txWidth" disabled></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label><i>RAM Memory:</i></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="txRAM" type="text" class="form-control text-responsive" name="txWidth" disabled></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label><i>Mobile</i></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="txMobile" type="text" class="form-control text-responsive" name="txMmobile" disabled></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label><i>Language:</i></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="txLang" type="text" class="form-control text-responsive" name="txLang" disabled></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label><i>User Agent:</i></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <textarea rows="4" class="form-control text-responsive" id="txUserAgent" name="txUserAgent"></textarea>
+                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label><i>Totals:</i></label>
+                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="txTotals" type="text" class="form-control text-responsive" name="txTotals" disabled></input>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
 
-    </div>
-
-    <!--04 save ****************************************************************************-->
-    <div id="savePage" class="hidden">
-        <div class="field">
-            <label for="outFileName">Save As</label></br>
-            <input type="number" name="outFileName" id="outFileName" placeholder="Enter File Name">
         </div>
-
-        <i class="fas fa-home icon-medium" title="System Info" id="clearText" style="cursor: pointer;"
-            onclick="goHome('savePage')"></i>
-        <i class="fa fa-save icon-medium" title="Download" id="iconDownload" style="cursor: pointer;"
-            onclick="confirmDownload()"></i>
-        <i class="fa fa-share icon-medium" title="Download" id="iconDownload" style="cursor: pointer;"
-            onclick="confirmDownload()"></i>
-
-            <i class="fas fa-envelope icon-medium" title="Download" id="iconDownload" style="cursor: pointer;"></i>
-            <i class="fab fa-whatsapp icon-medium" title="Download" id="iconDownload" style="cursor: pointer;"></i>
-        <i class="fab fa-facebook-messenger icon-medium" title="Download" id="iconDownload"
-            style="cursor: pointer;"></i>
-        <i class="fab fa-google-drive icon-medium" title="Download" id="iconDownload" style="cursor: pointer;"></i>
-        <i class="fas fa-upload icon-medium" title="Download" id="iconDownload" style="cursor: pointer;"></i>
-        <i class="far fa-question-circle icon-medium" title="Copy" id="copy" style="cursor: pointer;"
-        onclick="doCopy()"></i>
-
-
-
-
-    </div>
     </div>
 
     <div id="openFile" class="hidden">
@@ -2478,6 +2666,7 @@ var portrait = true;
 <script>
     //main entry point
     initializeTogglePassword();
+    initializeSwipe("pages");
 </script>
 
 </html>
